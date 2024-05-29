@@ -21,7 +21,6 @@ class User(db.Model, UserMixin):
 class Role(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20), unique=True, nullable=True)
-    # users = db.relationship('User', backref='role', lazy=True)
     users = db.relationship('User', back_populates='role', lazy=True)
     def __str__(self):
         return self.name
