@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Ticket System</h1>
+        <p class="lead">Welcome to the simple ticket system.</p>
+        <hr class="my-4">
+        <p>Use this system to manage your tickets.</p>
+    </div>
+    {% if current_user.is_authenticated %}
+        <div class="container">
+        <h1>Welcome, {{ login }}!</h1>
+        <p>Your role is: {{ role }}</p>
+        <p>Your group is: {{ group }}</p>
+    </div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Edit Ticket</h1>
+    <form method="POST">
+        <label for="status">Status:</label>
+        <select name="status" id="status">
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+        </select><br><br>
+        <label for="note">Note:</label>
+        <textarea name="note" id="note" required>{{ ticket.note }}</textarea>
+        <br>
+        <button type="submit">Update Ticket</button><br>
+        <a href="{{ url_for('show_tickets') }}">Back</a>
+    </form>
+{% endblock %}
