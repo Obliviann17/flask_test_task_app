@@ -106,10 +106,6 @@ def edit_ticket(ticket_id):
         flash('You do not have permission to edit this ticket.', 'danger')
         return redirect(url_for('show_tickets'))
 
-    # if ticket.user_id != current_user.id:
-    #     flash('You do not have permission to edit this ticket.', 'danger')
-    #     return redirect(url_for('show_tickets'))
-
     if request.method == 'POST':
         ticket.status = request.form.get('status')
         ticket.note = request.form.get('note')
